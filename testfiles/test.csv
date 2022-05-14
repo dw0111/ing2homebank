@@ -1,4 +1,16 @@
-Bezeichnung Auftragskonto;IBAN Auftragskonto;BIC Auftragskonto;Bankname Auftragskonto;Buchungstag;Valutadatum;Name Zahlungsbeteiligter;IBAN Zahlungsbeteiligter;BIC (SWIFT-Code) Zahlungsbeteiligter;Buchungstext;Verwendungszweck;Betrag;Waehrung;Saldo nach Buchung;Bemerkung;Kategorie;Steuerrelevant;Glaeubiger ID;Mandatsreferenz
-Online;DE123456789101112131400;GENODEM1ABC;VOLKSBANK;01.01.2022;01.01.2022;MUSTERFIRMA 1;DE123456789101112131400;GENODEM1DEF;Kartenzahlung girocard;MUSTERFIRMA/DE         01.01.2022 um 13:11:34 Uhr 12345678/12345/ABCD/EFGH   12345678/1234567890/1/1224 REF 123456/123456;-16,90;EUR;1000,00;;;;DE1111111111111111;123456
-Online;DE123456789101112131400;GENODEM1ABC;VOLKSBANK;01.01.2022;01.01.2022;VOLKSBANK;DE123456789101112131400;GENODEM1GHI;Auszahlung girocard;Teststraße/Musterstadt, Verwal/DE01.01.2022 um 11:41:30 Uhr GA 12345678/1234567/12345678901234/8619126500/1/1224 REF 123456/123456;-35,00;EUR;1200,00;;;;DE1111111111111111;123456
-Online;DE123456789101112131400;GENODEM1ABC;VOLKSBANK;01.01.2022;01.01.2022;SUPERMARKT MUSTERSTADT;DE123456789101112131400;GENODEM1JKL;Kartenzahlung girocard;SUPERMARKT MUSTERSTADT/MUSTERSTADT/DE     26.02.2022 um 11:59:12 Uhr 12345678/123456/ABCD/EFGH  12345678/1234567890/1/1224 REF 123456/123456;-7,20;EUR;1500,00;;;;DE1111111111111111;123456
+Umsatzanzeige;Datei erstellt am: 14.05.2022 13:44
+
+IBAN;DE12 3456 7890 1112 1314 15
+Kontoname;Kredit
+Bank;ING
+Kunde;Martha Musterfrau, Max Mustermann
+Zeitraum;01.02.2022 - 28.02.2022
+Saldo;-1000,00;EUR
+
+Sortierung;Datum absteigend
+
+In der CSV-Datei finden Sie alle bereits gebuchten Ums�tze. Die vorgemerkten Ums�tze werden nicht aufgenommen, auch wenn sie in Ihrem Internetbanking angezeigt werden.
+
+Buchung;Valuta;Auftraggeber/Empf�nger;Buchungstext;Verwendungszweck;Saldo;W�hrung;Betrag;W�hrung
+28.02.2022;28.02.2022;Musterfrau, M.   Mustermann,;Lastschrifteinzug;ING-DIBA AG 123456789 30.02.2022;-1000,03;EUR;250,50;EUR
+28.02.2022;28.02.2022;;Zinsen;;-1.010,58;EUR;-10,00;EUR

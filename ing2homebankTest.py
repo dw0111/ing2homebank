@@ -6,26 +6,26 @@ import os
 import warnings
 import tempfile
 import subprocess
-import vb2homebank
+import ing2homebank
 
 
-class Vb2HomebankTest(unittest.TestCase):
+class ING2HomebankTest(unittest.TestCase):
 
     def setUp(self):
         warnings.simplefilter("ignore", ResourceWarning)
 
     def testShouldConvertCashFile(self):
-        with open(r'testfiles/test.csv', encoding='utf_8') as csv_file:
-            vb2homebank.convert_vb_cash(csv_file, 'testresult.csv')
+        with open(r'testfiles/test.csv', encoding='latin_1') as csv_file:
+            ing2homebank.convert_ing_cash(csv_file, 'testresult.csv')
             csv_file.seek(0)
-            lineNumber = len(vb2homebank.find_transaction_lines(csv_file))
-            self.assertEqual(lineNumber, 3)
+            lineNumber = len(ing2homebank.find_transaction_lines(csv_file))
+            self.assertEqual(lineNumber, 2)
 
     def testShouldConvertCashFileAndWriteToAlternativeOutputDir(self):
-        with open(r'testfiles/test.csv', encoding='utf_8') as csv_file:
+        with open(r'testfiles/test.csv', encoding='latin_1') as csv_file:
             tmpdir = tempfile.gettempdir()
-            vb2homebank.convert_vb_cash(csv_file,
-                                        os.path.join(tmpdir, "testresult.csv"))
+            ing2homebank.convert_ing_cash(
+                csv_file, os.path.join(tmpdir, "testresult.csv"))
 
     def tearDown(self):
         self.delete('testresult.csv')
@@ -35,15 +35,15 @@ class Vb2HomebankTest(unittest.TestCase):
             os.remove(filename)
 
 
-class Vb2HomebankFunctionalTest(unittest.TestCase):
+class ING2HomebankFunctionalTest(unittest.TestCase):
 
     def testShouldRunScript(self):
-        result = subprocess.run(["./vb2homebank.py", "testfiles/test.csv"])
+        result = subprocess.run(["./ing2homebank.py", "testfiles/test.csv"])
         self.assertEqual(0, result.returncode)
 
     def testShouldRunScriptWithOutputParameter(self):
         result = subprocess.run([
-            "./vb2homebank.py", "testfiles/test.csv", "--output-file",
+            "./ing2homebank.py", "testfiles/test.csv", "--output-file",
             "/tmp/testresult.csv"
         ])
         self.assertEqual(0, result.returncode)

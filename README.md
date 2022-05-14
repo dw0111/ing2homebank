@@ -1,8 +1,8 @@
-# vb2homebank
+# ing2homebank
 
 Thank you to [hamvocke](https://github.com/hamvocke) for writing this for [DKB](https://github.com/hamvocke/dkb2homebank) and basically having done all the work already.
 
-This script converts CSV account reports from german Volksbank to a
+This script converts CSV account reports from ING to a
 CSV format that can be imported by the personal finance software
 [Homebank](http://homebank.free.fr/).
 
@@ -10,11 +10,11 @@ CSV format that can be imported by the personal finance software
 
 To convert a file run:
 
-    ./vb2homebank.py yourDKBExportFile.csv
+    ./ing2homebank.py yourDKBExportFile.csv
 
-You can also choose an alternative path for your output file, if the standard "homebank.csv" in the working directory doesn't do it for you. Use `--output-file` or `-o` for that:
+You can also choose an alternative path for your output file, if the standard "converted\_{{ originalName }}.csv" in the working directory doesn't do it for you. Use `--output-file` or `-o` for that:
 
-    ./vb2homebank.py yourCashReportFile.csv --output-file ~/Documents/Finances/import_to_homebank.csv
+    ./ing2homebank.py yourCashReportFile.csv --output-file ~/Documents/Finances/import_to_homebank.csv
 
 ## Importing into Homebank
 
@@ -31,8 +31,8 @@ To run this script, you need Python 3.4 or higher. I've verified that the export
 I have included a (admittedly very small) set of tests to help a little bit during development.
 These tests use Python's _unittest_ module and can be executed using:
 
-    ./vb2homebankTest.py
+    ./ing2homebankTest.py
 
 You can also test the script manually by using the provided testfiles:
 
-    ./vb2homebank.py testfiles/test.csv
+    ./ing2homebank.py testfiles/test.csv
